@@ -11,7 +11,7 @@ flavorOfTheDayConversion.handle('', async conv => {
     const formatedFlavorString: string = flavorNames.length > 1 ? `${flavorNames.slice(0, -1).join(',')} and ${flavorNames.slice(-1)}` : flavorNames[0];
     conv.add(`The flavor of the day at Kopps on ${todaysFlavorForecast.date} is ${formatedFlavorString}.`);
   } else {
-    conv.add("Sorry, We we're unable to find any flavors of the day.");
+    conv.add("Sorry, We were unable to find any flavors of the day.");
   }
 });
 
