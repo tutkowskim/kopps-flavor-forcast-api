@@ -1,6 +1,6 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import flavorOfTheDayConversion from './google-assistant-conversion-result';
+import flavorOfTheDayConversion from './google-assistant-conversion';
 import { koppsFlavorForecast } from './kopps-flavor-preview-web-scrapper';
 
 const app = express();
