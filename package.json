@@ -12,8 +12,9 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "@assistant/conversation": "^3.1.0",
+    "body-parser": "^1.18.3",
     "cheerio": "^1.0.0-rc.3",
-    "expres": "0.0.5",
     "express": "^4.17.1",
     "got": "^11.6.2"
   },
