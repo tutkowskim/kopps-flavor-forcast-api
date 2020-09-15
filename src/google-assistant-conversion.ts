@@ -3,7 +3,7 @@ import { koppsFlavorForecast } from './kopps-flavor-preview-web-scrapper';
 
 const flavorOfTheDayConversion = conversation()
 
-flavorOfTheDayConversion.handle('Flavor of the day', conv => {
+flavorOfTheDayConversion.handle('FlavorOfTheDay', conv => {
   koppsFlavorForecast().then(flavorForecast => {
     if (flavorForecast.length > 0 && flavorForecast[0].flavors.length > 0) {
       const todaysFlavorForecast = flavorForecast[0];
