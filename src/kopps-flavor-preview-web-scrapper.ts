@@ -38,7 +38,7 @@ const getFlavorForecastFromHTML = (flavorCardHtml: string): FlavorForecast => {
         flavor:  $('.grid div:nth-of-type(2) .flavor-of-day').text(),
         description: $('.grid div:nth-of-type(2) p').text(),
         image: 'https://www.kopps.com' + $('.grid div:nth-of-type(2) .flavor-circle img').prop('src'),
-      }
+      },
     ],
   };
 }

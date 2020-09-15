@@ -9,9 +9,9 @@ const PORT = process.env.PORT || 3000;
 app.use(bodyParser.json());
 
 app.get('/', async (_req, res) => {
-  res.json(await koppsFlavorForecast())
+  res.json(await koppsFlavorForecast());
 });
 
-app.post('/google-actions-fulfillment', flavorOfTheDayConversion)
+app.post('/google-actions-fulfillment', flavorOfTheDayConversion);
 
 app.listen(PORT);
