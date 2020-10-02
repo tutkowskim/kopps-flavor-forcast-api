@@ -30,14 +30,14 @@ const getFlavorForecastFromHTML = (flavorCardHtml: string): FlavorForecast => {
     date: $('h5').text(),
     flavors: [
       {
-        flavor: $('.grid div:nth-of-type(1) .flavor-of-day').text(),
-        description: $('.grid div:nth-of-type(1) p').text(),
-        image: 'https://www.kopps.com' + $('.grid div:nth-of-type(1) .flavor-circle img').prop('src'),
+        flavor: $('.grid div:nth-of-type(1) .flavor-of-day').text().trim(),
+        description: $('.grid div:nth-of-type(1) p').text().trim(),
+        image: 'https://www.kopps.com' + $('.grid div:nth-of-type(1) .flavor-circle img').prop('src').trim(),
       },
       {
-        flavor:  $('.grid div:nth-of-type(2) .flavor-of-day').text(),
-        description: $('.grid div:nth-of-type(2) p').text(),
-        image: 'https://www.kopps.com' + $('.grid div:nth-of-type(2) .flavor-circle img').prop('src'),
+        flavor:  $('.grid div:nth-of-type(2) .flavor-of-day').text().trim(),
+        description: $('.grid div:nth-of-type(2) p').text().trim(),
+        image: 'https://www.kopps.com' + $('.grid div:nth-of-type(2) .flavor-circle img').prop('src').trim(),
       },
     ],
   };
