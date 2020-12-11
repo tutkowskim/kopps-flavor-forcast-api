@@ -28,9 +28,9 @@ const getFlavorForecastFromHTML = (flavorCardHtml: string): FlavorForecast => {
 
   const flavors: Flavor[] = [];
   for (let i = 1; i<= 2; ++i) {
-    const flavor = $('.grid div:nth-of-type(1) .flavor-of-day').text()?.trim();
-    const description = $('.grid div:nth-of-type(1) p').text()?.trim();
-    const image = 'https://www.kopps.com' + $('.grid div:nth-of-type(1) .flavor-circle img').prop('src');
+    const flavor = $(`.grid div:nth-of-type(${i}) .flavor-of-day`).text()?.trim();
+    const description = $(`.grid div:nth-of-type(${i}) p`).text()?.trim();
+    const image = 'https://www.kopps.com' + $(`.grid div:nth-of-type(${i}) .flavor-circle img`).prop('src');
     if (flavor && description && image) { 
       flavors.push({ flavor, description, image });
     }
