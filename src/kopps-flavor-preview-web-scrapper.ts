@@ -26,19 +26,15 @@ const getFlavorCardsHTML = (flavorPreviewHtml: string): string[] => {
 const getFlavorForecastFromHTML = (flavorCardHtml: string): FlavorForecast => {
   const $ = cheerio.load(flavorCardHtml);
 
-  return {
-    date: $('h5').text(),
-    flavors: [
-      {
-        flavor: $('.grid div:nth-of-type(1) .flavor-of-day').text().trim(),
-        description: $('.grid div:nth-of-type(1) p').text().trim(),
-        image: 'https://www.kopps.com' + $('.grid div:nth-of-type(1) .flavor-circle img').prop('src').trim(),
-      },
-      {
-        flavor:  $('.grid div:nth-of-type(2) .flavor-of-day').text().trim(),
-        description: $('.grid div:nth-of-type(2) p').text().trim(),
-        image: 'https://www.kopps.com' + $('.grid div:nth-of-type(2) .flavor-circle img').prop('src').trim(),
-      },
-    ],
-  };
+  const flavors: Flavor[] = [];
+  for (let i = 1; i<= 2; ++i) {
+    const flavor = $('.grid div:nth-of-type(1) .flavor-of-day').text()?.trim();
+    const description = $('.grid div:nth-of-type(1) p').text()?.trim();
+    const image = 'https://www.kopps.com' + $('.grid div:nth-of-type(1) .flavor-circle img').prop('src');
+    if (flavor && description && image) { 
+      flavors.push({ flavor, description, image });
+    }
+  }
+
+  return { date: $('h5').text(), flavors };
 }
